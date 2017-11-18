@@ -57,6 +57,7 @@ public class IpAspect {
         //如果map中不包含该ip 则添加
         if(!map.containsKey(ipAddress)){
             setWebStats(ipAddress);
+            //定时保存
             webStatsService.save(webStats);
             log.info("保存到数据库");
             map.put(ipAddress,1);
@@ -72,6 +73,8 @@ public class IpAspect {
         log.info("map={}",map.size());
         log.info("list.size={},content={}",list.size(),list.toString());
         log.info("count = {}",map.get(ipAddress));
+
+
     }
 
     public void setWebStats(String ipAddress){

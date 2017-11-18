@@ -12,3 +12,5 @@ mybatis:
   type-aliases-package: com.website.entity
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
+server:
+  port: 7000
